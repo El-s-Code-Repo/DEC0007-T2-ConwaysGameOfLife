@@ -23,5 +23,5 @@ COPY . .
 # Expose your application port
 EXPOSE 3000
 
-# Command to run your app
+# Command to run your Backend
 CMD ["npm", "start"]

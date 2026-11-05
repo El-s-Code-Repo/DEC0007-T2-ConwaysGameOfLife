@@ -10,8 +10,8 @@ services:
       - NODE_ENV=development
       - DATABASE_URL=mongodb://db:27017/myapp
     volumes:
-      - .:/usr/src/app
-      - /usr/src/app/node_modules
+      - .:/usr/src/Backend
+      - /usr/src/Backend/node_modules
     depends_on:
       db:
         condition: service_healthy

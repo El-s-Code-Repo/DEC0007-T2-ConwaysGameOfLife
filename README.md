@@ -1,6 +1,8 @@
 # template-prog-web
 
-This is a template node app
+Conway's game of life
+Backend(Express) - calculates game
+Frontend(Vue) - renders
 
 Installed packages
 ```
