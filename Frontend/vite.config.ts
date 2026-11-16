@@ -5,12 +5,8 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   plugins: [vue()],
   server: {
-    proxy: {
-      '/api': {
-        target: 'http://api:3000',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, '')
-      }
-    }
+    host:true,
+    port:7777,
+    strictPort:true,
   }
 })

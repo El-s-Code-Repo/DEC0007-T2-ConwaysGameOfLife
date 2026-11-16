@@ -3,50 +3,28 @@ services:
   api:
     build:
       context: ./Backend
-      dockerfile: Dockerfile
+      dockerfile: ./Dockerfile
     ports:
       - "3000:3000"
-    environment:
-      - NODE_ENV=development
-      - DATABASE_URL=mongodb://db:27017/myapp
-    volumes:
-      - .:/usr/src/Backend
-      - /usr/src/Backend/node_modules
-    depends_on:
-      db:
-        condition: service_healthy
+#    environment:
+#      - NODE_ENV=development
+#    volumes:
+#      - .:/usr/src/Backend
+#      - /usr/src/Backend/node_modules
+
     networks:
       - isolated
 
-  # Database Service (Example using MongoDB)
-  # (uncomment ports to allow LAN access)
-  db:
-    image: mongo:7.0
-    #    ports: #
-    #      - "27017:27017"
-    volumes:
-      - mongo_data:/data/db
-    healthcheck:
-      test: echo 'db.runCommand("ping").ok' | mongosh db:27017/test --quiet
-      interval: 10s
-      timeout: 5s
-      retries: 5
-    networks:
-      - isolated
 
   frontend:
-    image: node:20-alpine
-    working_dir: /app
+    build:
+      context: ./Frontend
+      dockerfile: Dockerfile
     ports:
-      - "5173:5173"
-    volumes:
-      - ./Frontend:/app
-    command: sh -c "npm install && npm run dev -- --host"
+      - "7777:7777"
     networks:
       - isolated
 
-volumes:
-  mongo_data:
 
 networks:
   isolated:

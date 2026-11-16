@@ -1,6 +1,6 @@
-FROM ubuntu:latest
+#FROM ubuntu:latest
 # Use a lightweight, official Node image
-FROM node:20-alpine AS base
+FROM node:24-slim AS base
 
 #You should probably replace this
 LABEL authors="Mess & Lucas"

@@ -13,20 +13,16 @@
   "license": "ISC",
   "author": "Mess",
   "type": "module",
-  "main": "src/app.js",
+  "main": "src/app.ts",
   "directories": {
     "doc": "../docs"
   },
   "scripts": {
-    "start": "node src/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon Backend/app.mjs"
+    "start": "node src/app.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "cors": "^2.8.6",
     "express": "^5.2.1"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.14"
   }
 }

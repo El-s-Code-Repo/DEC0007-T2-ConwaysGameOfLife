@@ -94,7 +94,6 @@ class GameOfLife{
             stringBuff += "│\n"
         }
         stringBuff += bot
-        // console.log(stringBuff);
         return stringBuff
     }
 

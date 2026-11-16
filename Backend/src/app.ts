@@ -1,4 +1,3 @@
-console.log("Hello World")
 import express from "express"
 import GameOfLife from "./game/engine.ts"
 import cors from "cors"
@@ -32,9 +31,9 @@ app.get("/testarray",function (req,res) {
 })
 
 app.post("/",function (req,res) {
-    console.log(GameOfLife.prettyPrint(req.body))
+    // console.log(GameOfLife.prettyPrint(req.body))
     let nextBoard = GameOfLife.calculateNextBoard(req.body)
-    console.log(GameOfLife.prettyPrint(nextBoard))
+    // console.log(GameOfLife.prettyPrint(nextBoard))
     res.status(201).json(JSON.stringify(nextBoard))
 })
 

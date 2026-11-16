@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 
-const rows = 15
-const cols = 15
+const rows = 30
+const cols = rows
 
 // State
 const board = ref<number[][]>(Array.from({ length: rows }, () => Array(cols).fill(0)))
@@ -29,13 +29,21 @@ const resetBoard = () => {
   stopSimulation()
 }
 
-// teste, tem que dar uam olhada aqui dps ian
+// Integracao com o backend express
 const fetchNextGeneration = async () => {
   try {
+    let body = JSON.stringify(board.value)
     // Bate no proxy do Vite, que redireciona silenciosamente para o backend no Docker
-    const response = await fetch('http://localhost:3000')
+    const response = await fetch("http://localhost:3000", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: body
+    });
     
-    if (!response.ok) throw new Error('Falha na resposta da rede')
+    if (!response.ok) throw new Error('Falha na resposta da rede',)
     
     const data = await response.json()
     board.value = JSON.parse(data)
@@ -45,6 +53,8 @@ const fetchNextGeneration = async () => {
   }
 }
 
+
+
 // RF03 e RF04: iniciar e pausar a simulacao
 const toggleSimulation = () => {
   if (isPlaying.value) {
@@ -53,7 +63,7 @@ const toggleSimulation = () => {
     isPlaying.value = true
     playInterval = setInterval(() => {
       fetchNextGeneration()
-    }, 500) // Avança a cada 500ms
+    }, 150) // Avança a cada 500ms
   }
 }
 
