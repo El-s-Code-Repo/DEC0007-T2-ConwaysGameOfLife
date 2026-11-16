@@ -28,14 +28,14 @@ Frontend(Vue) - renders
     RF08 — Contagem de celulas vivas: apresentar a quantidade de celulas vivas na geracao atual.
 
 # Checklist
- - [ ] RF01
- - [ ] RF02
+ - [x] RF01
+ - [x] RF02
  - [ ] RF03
  - [ ] RF04
  - [ ] RF05
- - [ ] RF06
- - [ ] RF07
- - [ ] RF08
+ - [x] RF06
+ - [x] RF07
+ - [x] RF08
 
 
     
