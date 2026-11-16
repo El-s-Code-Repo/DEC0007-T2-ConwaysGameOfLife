@@ -44,4 +44,7 @@ Frontend(Vue) - renders
 Installed packages
 ```
 - Express
+- Vue 3
+- Vite
+- TypeScript
 ```
