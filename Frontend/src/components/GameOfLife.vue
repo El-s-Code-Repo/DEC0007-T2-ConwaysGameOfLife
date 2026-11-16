@@ -33,7 +33,7 @@ const resetBoard = () => {
 const fetchNextGeneration = async () => {
   try {
     // Bate no proxy do Vite, que redireciona silenciosamente para o backend no Docker
-    const response = await fetch('/api/')
+    const response = await fetch('http://localhost:3000')
     
     if (!response.ok) throw new Error('Falha na resposta da rede')
     

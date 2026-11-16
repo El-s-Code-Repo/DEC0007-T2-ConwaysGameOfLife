@@ -1,10 +1,11 @@
 console.log("Hello World")
 import express from "express"
+import cors from "cors"
 
 let app = express()
 
 app.use(express.static("./static"))
-
+app.use(cors());
 
 app.get("/",function (req,res) {
     const matrix = [
