@@ -34,7 +34,7 @@ const fetchNextGeneration = async () => {
   try {
     let body = JSON.stringify(board.value)
     // Bate no proxy do Vite, que redireciona silenciosamente para o backend no Docker
-    const response = await fetch("http://localhost:3000", {
+    const response = await fetch("/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

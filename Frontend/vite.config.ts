@@ -8,5 +8,14 @@ export default defineConfig({
     host:true,
     port:7777,
     strictPort:true,
-  }
+  },
+  build: {
+    outDir: '../Backend/static/',
+    assetsDir: 'static',
+    target: 'es2022',
+    sourcemap: true,
+    assetsInlineLimit: 8192, // Inline assets under 8 KB
+    chunkSizeWarningLimit: 600,
+    cssCodeSplit: true,
+  },
 })

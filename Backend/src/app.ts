@@ -7,6 +7,7 @@ let app = express()
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static('static'));
 
 app.get("/testarray",function (req,res) {
     const matrix = [

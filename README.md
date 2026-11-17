@@ -30,9 +30,9 @@ Frontend(Vue) - renders
 # Checklist
  - [x] RF01
  - [x] RF02
- - [ ] RF03
- - [ ] RF04
- - [ ] RF05
+ - [x] RF03
+ - [x] RF04
+ - [x] RF05
  - [x] RF06
  - [x] RF07
  - [x] RF08
